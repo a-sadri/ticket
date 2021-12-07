@@ -1,6 +1,17 @@
 import asyncHandler from 'express-async-handler';
 import Ticket from '../models/ticketModel.js';
 
+// @desc   Fetch all tickets
+// @route  GET /tickets
+// @access Public
+const getTickets = asyncHandler(async (req, res) => {
+  const tickets = await Ticket.find({});
+  res.json(tickets);
+});
+
+// @desc   Add ticket
+// @route  POST /tickets
+// @access Private
 const addTicket = asyncHandler(async (req, res) => {
   const { title, description } = req.body;
 
@@ -26,4 +37,4 @@ const addTicket = asyncHandler(async (req, res) => {
   }
 });
 
-export { addTicket };
+export { getTickets, addTicket };
