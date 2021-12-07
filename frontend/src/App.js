@@ -1,9 +1,23 @@
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// Components
+import Layout from './components/Layout';
+import Dashboard from './pages/Dashboard';
+import Tickets from './pages/tickets/Tickets';
+import AddTicket from './pages/tickets/AddTicket';
+
+const App = () => {
   return (
-    <div className='App'>
-      <h2>Ticket</h2>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path='tickets' element={<Tickets />} />
+          <Route path='tickets/add' element={<AddTicket />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
