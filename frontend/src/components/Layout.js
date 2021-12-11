@@ -3,10 +3,12 @@ import Header from './Header';
 
 const Layout = () => {
   return (
-    <div className='container mx-auto'>
+    <>
       <Header />
-      <Outlet />
-    </div>
+      <div className='container mx-auto'>
+        <Outlet />
+      </div>
+    </>
   );
 };
 
