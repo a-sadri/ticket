@@ -1,10 +1,8 @@
-import { TiTicket } from 'react-icons/ti';
-
-const Card = () => {
+const Card = ({ Icon }) => {
   return (
-    <div className='p-6 max-w-sm items-center bg-white rounded-xl shadow-md flex'>
-      <div className=''>
-        <TiTicket size='2rem' />
+    <div className='p-6 items-center bg-white rounded-lg shadow-md flex'>
+      <div className='text-gray-500'>
+        <Icon size='2rem' />
       </div>
       <div>
         <div className='text-xl font-medium text-black'>ChitChat</div>
