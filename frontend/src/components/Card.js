@@ -1,12 +1,12 @@
-const Card = ({ Icon }) => {
+const Card = ({ Icon, title, slug }) => {
   return (
-    <div className='p-6 items-center bg-white rounded-lg shadow-md flex'>
-      <div className='text-gray-500'>
-        <Icon size='2rem' />
+    <div className='font-Nunito p-6 items-center bg-white rounded-lg shadow-md flex cursor-pointer justify-center'>
+      <div className='text-gray-500 pr-2'>
+        <Icon size='2.1rem' />
       </div>
       <div>
-        <div className='text-xl font-medium text-black'>ChitChat</div>
-        <p className='text-gray-500'>You have a new message!</p>
+        <div className='text-xl font-bold text-black'>{title}</div>
+        <p className='text-gray-500'>{slug}</p>
       </div>
     </div>
   );
