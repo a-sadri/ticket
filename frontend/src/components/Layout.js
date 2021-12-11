@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router';
+import Header from './Header';
 
 const Layout = () => {
   return (
-    <div>
-      <h2>Layout</h2>
+    <div className='container mx-auto'>
+      <Header />
       <Outlet />
     </div>
   );
