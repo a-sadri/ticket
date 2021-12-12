@@ -3,7 +3,7 @@ import ActionLine from '../../components/ActionLine';
 const Tickets = () => {
   return (
     <>
-      <ActionLine />
+      <ActionLine title='All Tickets' buttonText='Add New Ticket' />
       <div>
         <div class='flex flex-col'>
           <div class='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
