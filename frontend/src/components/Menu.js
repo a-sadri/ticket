@@ -6,7 +6,7 @@ const Menu = () => {
       <div className='flex space-x-4'>
         <Link
           to='/'
-          className='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+          className='text-white px-3 py-2 rounded-md text-sm font-medium'
           aria-current='page'
         >
           Dashboard
