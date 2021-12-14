@@ -6,10 +6,12 @@ export const ticketSlice = createSlice({
   name: 'ticket',
   initialState,
   reducers: {
-    getAllTickets: (state) => {},
+    addTicket: (state) => {},
   },
 });
 
 export const {} = ticketSlice.actions;
 
 export default ticketSlice.reducer;
+
+// Selector
