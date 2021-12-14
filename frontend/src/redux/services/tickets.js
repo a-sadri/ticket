@@ -9,7 +9,10 @@ export const ticketsApi = createApi({
     getTickets: builder.query({
       query: () => `tickets`,
     }),
+    getTicket: builder.query({
+      query: (id) => `tickets/${id}`,
+    }),
   }),
 });
 
-export const { useGetTicketsQuery } = ticketsApi;
+export const { useGetTicketsQuery, useGetTicketQuery } = ticketsApi;

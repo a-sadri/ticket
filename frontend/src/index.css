@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: 'Nunito';
-}
-
 .active {
   background-color: #111827;
 }
