@@ -1,6 +1,7 @@
 import { useGetTicketsQuery } from '../../redux/services/tickets';
 import ActionLine from '../../components/ActionLine';
 import Spinner from '../../components/shared/Spinner';
+import Alerts from '../../components/shared/Alerts';
 
 const Tickets = () => {
   const { data, error, isLoading, isSuccess, isError } = useGetTicketsQuery();
@@ -58,7 +59,16 @@ const Tickets = () => {
                       </tr>
                     )}
 
-                    {isError && JSON.stringify(error.error)}
+                    {isError && (
+                      <tr>
+                        <td colSpan={5} className='py-10'>
+                          <Alerts
+                            alert='error'
+                            title={JSON.stringify(error.error)}
+                          />
+                        </td>
+                      </tr>
+                    )}
                     {isSuccess &&
                       data &&
                       data.map((ticket) => (
