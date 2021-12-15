@@ -7,6 +7,7 @@ import connectDB from './config/db.js';
 import { notFound, errorHandler } from './middlewares/errorMiddleware.js';
 import mainRoutes from './routes/mainRoutes.js';
 import ticketRoutes from './routes/ticketRoutes.js';
+import messageRoutes from './routes/messageRoutes.js';
 
 // Base config
 dotenv.config();
@@ -18,6 +19,7 @@ const PORT = process.env.PORT || 5000;
 
 // Routes
 app.use('/tickets', ticketRoutes);
+app.use('/messages', messageRoutes);
 app.use('/', mainRoutes);
 
 // middleware
