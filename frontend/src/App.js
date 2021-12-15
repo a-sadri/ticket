@@ -5,6 +5,7 @@ import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Tickets from './pages/tickets/Tickets';
 import AddTicket from './pages/tickets/AddTicket';
+import Messages from './pages/messages/Messages';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path='tickets' element={<Tickets />} />
           <Route path='tickets/add' element={<AddTicket />} />
+          <Route path='messages' element={<Messages />} />
         </Route>
       </Routes>
     </BrowserRouter>

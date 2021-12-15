@@ -35,7 +35,7 @@ const Cards = () => {
       <Card Icon={RiHashtag} title='Tags' slug='' link='/' />
       <Card Icon={TiTicket} title='Departments' slug='' link='/' />
       <Card Icon={AiOutlineQuestionCircle} title='F&Q' slug='' link='/' />
-      <Card Icon={BiMessageDetail} title='Messages' slug='' link='/' />
+      <Card Icon={BiMessageDetail} title='Messages' slug='' link='/messages' />
       <Card Icon={FiSettings} title='Settings' slug='' link='/' />
     </motion.div>
   );

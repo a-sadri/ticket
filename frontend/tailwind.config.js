@@ -5,6 +5,7 @@ module.exports = {
       fontFamily: {
         Nunito: ['Nunito', 'system-ui'],
       },
+      display: ['group-hover'],
     },
   },
   plugins: [],
