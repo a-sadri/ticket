@@ -1,17 +1,7 @@
-import { motion } from 'framer-motion';
-
 import ActionLine from '../../components/ActionLine';
 import { FaTrash } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
-
-const item = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-  },
-};
 
 const Messages = () => {
   return (
@@ -44,25 +34,45 @@ const Messages = () => {
                     <div>1</div>
                     <div>1</div>
                   </div>
-                  <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3'>
-                    {/* Button Animation */}
-                    <motion.div
-                      variants={item}
-                      initial='hidden'
-                      animate='visible'
-                      className='badge-info'
-                    >
+                  <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3 transition ease-in-out delay-75 duration-500'>
+                    <div className='badge-info group-hover:animate-left'>
                       <FaEye className='text-sm mr-2' />
                       Show Message
-                    </motion.div>
-                    <motion.div className='badge-warning'>
+                    </div>
+
+                    <div className='badge-warning '>
                       <FaEdit className='text-sm mr-2' />
                       Edit
-                    </motion.div>
-                    <motion.div className='badge-error'>
+                    </div>
+
+                    <div className='badge-error group-hover:animate-right'>
                       <FaTrash className='text-sm mr-2' />
                       Delete
-                    </motion.div>
+                    </div>
+                  </div>
+                </div>
+                <div className='relative group border p-3 m-2 rounded-lg col-start-1 col-end-5'>
+                  <div className='grid grid-cols-4 group-hover:blur-sm transition ease-in-out delay-75'>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                    <div>1</div>
+                  </div>
+                  <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3 transition ease-in-out duration-500'>
+                    <div className='badge-info group-hover:animate-left'>
+                      <FaEye className='text-sm mr-2' />
+                      Show Message
+                    </div>
+
+                    <div className='badge-warning '>
+                      <FaEdit className='text-sm mr-2' />
+                      Edit
+                    </div>
+
+                    <div className='badge-error group-hover:animate-right'>
+                      <FaTrash className='text-sm mr-2' />
+                      Delete
+                    </div>
                   </div>
                 </div>
               </div>
