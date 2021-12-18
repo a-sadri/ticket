@@ -4,10 +4,13 @@
 
 @layer components {
   .badge-info {
-    @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-red-100 bg-gray-500 rounded-lg;
+    @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-gray-100 bg-gray-500 rounded-lg;
+  }
+  .badge-success {
+    @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-green-100 bg-green-500 rounded-lg;
   }
   .badge-warning {
-    @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-red-100 bg-yellow-500 rounded-lg;
+    @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-yellow-100 bg-yellow-500 rounded-lg;
   }
   .badge-error {
     @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-red-100 bg-red-500 rounded-lg;

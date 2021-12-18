@@ -21,7 +21,7 @@ const IconVariants = {
     transition: {
       type: 'tween',
       duration: 0.8,
-      yoyo: Infinity,
+      repeatType: Infinity,
       ease: 'easeInOut',
     },
   },
