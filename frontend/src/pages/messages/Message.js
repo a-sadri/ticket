@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import { useGetMessageQuery } from '../../redux/services/messages';
+import { useGetMessageQuery } from '../../redux/apiServices';
 
 const Message = () => {
   const { id } = useParams();

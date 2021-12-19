@@ -1,6 +1,6 @@
 import { NavLink as Link } from 'react-router-dom';
 import moment from 'moment';
-import { useGetMessagesQuery } from '../../redux/services/messages';
+import { useGetMessagesQuery } from '../../redux/apiServices';
 
 import ActionLine from '../../components/ActionLine';
 import { FaTrash } from 'react-icons/fa';

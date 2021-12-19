@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import { useGetUserQuery } from '../../redux/services/users';
+import { useGetUserQuery } from '../../redux/apiServices';
 
 const User = () => {
   const { id } = useParams();

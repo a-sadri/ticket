@@ -1,4 +1,4 @@
-import { useGetTicketsQuery } from '../../redux/services/tickets';
+import { useGetTicketsQuery } from '../../redux/apiServices';
 import ActionLine from '../../components/ActionLine';
 import Spinner from '../../components/shared/Spinner';
 import Alerts from '../../components/shared/Alerts';
