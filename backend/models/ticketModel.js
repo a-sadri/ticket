@@ -2,7 +2,11 @@ import mongoose from 'mongoose';
 
 const ticketSchema = new mongoose.Schema(
   {
-    // user: {},
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
     // category: {},
     // tags: {},
     // department: {},
