@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import { useGetMessageQuery } from '../../redux/services/messages';
+import { useGetUserQuery } from '../../redux/services/users';
 
-const Message = () => {
+const User = () => {
   const { id } = useParams();
 
-  const { data, isLoading } = useGetMessageQuery(id);
+  const { data, isLoading } = useGetUserQuery(id);
 
-  let { title, description, status, createdAt, updatedAt } = !isLoading && data;
+  let { name, email, status, createdAt, updatedAt } = !isLoading && data;
 
   return (
     <div>
@@ -16,10 +16,10 @@ const Message = () => {
           <div className='py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8'>
             <div className='shadow overflow-hidden p-5 mt-4 bg-white border-b border-gray-200 sm:rounded-lg'>
               <div className='mb-4'>
-                <h1 className='font-bold text-2xl'>{title}</h1>
+                <h1 className='font-bold text-2xl'>{name}</h1>
               </div>
               <div>
-                <p>{description}</p>
+                <p>{email}</p>
               </div>
               <div className='mt-4 '>
                 <p>{moment(createdAt).format('YYYY-MM-DD hh:mm')}</p>
@@ -32,4 +32,4 @@ const Message = () => {
   );
 };
 
-export default Message;
+export default User;

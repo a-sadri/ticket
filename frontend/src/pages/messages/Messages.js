@@ -65,7 +65,7 @@ const Messages = () => {
                         <div>{message.title}</div>
                         <div className='text-center'>john doe</div>
                         <div className='text-center'>
-                          {moment(message.createdAt).format('YYYY-mm-DD hh:mm')}
+                          {moment(message.createdAt).format('YYYY-MM-DD hh:mm')}
                         </div>
                         <div className='text-center'>
                           {message.status ? (

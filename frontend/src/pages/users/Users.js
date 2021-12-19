@@ -1,6 +1,6 @@
 import { NavLink as Link } from 'react-router-dom';
 import moment from 'moment';
-import { useGetMessagesQuery } from '../../redux/services/messages';
+import { useGetUsersQuery } from '../../redux/services/users';
 
 import ActionLine from '../../components/ActionLine';
 import { FaTrash } from 'react-icons/fa';
@@ -10,7 +10,7 @@ import Alerts from '../../components/shared/Alerts';
 import Spinner from '../../components/shared/Spinner';
 
 const Users = () => {
-  const { data, error, isLoading, isSuccess, isError } = useGetMessagesQuery();
+  const { data, error, isLoading, isSuccess, isError } = useGetUsersQuery();
 
   return (
     <>
@@ -62,16 +62,16 @@ const Users = () => {
                       className='relative group border p-3 m-2 rounded-lg col-start-1 col-end-5'
                     >
                       <div className='grid grid-cols-4 group-hover:blur-sm transition ease-in-out delay-75'>
-                        <div>{user.title}</div>
-                        <div className='text-center'>john doe</div>
+                        <div>{user.name}</div>
+                        <div className='text-center'>{user.email}</div>
                         <div className='text-center'>
-                          {moment(user.createdAt).format('YYYY-mm-DD hh:mm')}
+                          {moment(user.createdAt).format('YYYY-MM-DD hh:mm')}
                         </div>
                         <div className='text-center'>
                           {user.status ? (
-                            <span className='badge-success'>Published</span>
+                            <span className='badge-success'>Active</span>
                           ) : (
-                            <span className='badge-error'>Draft</span>
+                            <span className='badge-error'>Deactive</span>
                           )}
                         </div>
                       </div>

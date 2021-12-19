@@ -39,7 +39,7 @@ const addMessage = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc   Fetch a messages
+// @desc   Fetch a message
 // @route  GET /messages/id
 // @access Public
 const getMessage = asyncHandler(async (req, res) => {
@@ -48,11 +48,11 @@ const getMessage = asyncHandler(async (req, res) => {
     res.json(message);
   } else {
     res.status(404);
-    throw new Error('User not found');
+    throw new Error('Message not found');
   }
 });
 
-// @desc   Update messages
+// @desc   Update message
 // @route  PUT /messages/id
 // @access Private
 const updateMessage = asyncHandler(async (req, res) => {
@@ -72,11 +72,11 @@ const updateMessage = asyncHandler(async (req, res) => {
     }
   } else {
     res.status(404);
-    throw new Error('User not found');
+    throw new Error('Message not found');
   }
 });
 
-// @desc   Delete a messages
+// @desc   Delete a message
 // @route  Delete /messages/id
 // @access Public
 const deleteMessage = asyncHandler(async (req, res) => {
@@ -86,7 +86,7 @@ const deleteMessage = asyncHandler(async (req, res) => {
     res.json(deletedMessage);
   } else {
     res.status(404);
-    throw new Error('User not found');
+    throw new Error('Message not found');
   }
 });
 
