@@ -17,7 +17,7 @@ const item = {
 
 const IconVariants = {
   onHover: {
-    x: 10,
+    x: 8,
     transition: {
       type: 'tween',
       duration: 0.8,

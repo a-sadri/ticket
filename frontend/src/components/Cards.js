@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Card from './Card';
 // Icons
 import { TiTicket } from 'react-icons/ti';
+import { FaUsers } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { MdOutlineCategory } from 'react-icons/md';
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
@@ -31,6 +32,7 @@ const Cards = () => {
       animate='visible'
     >
       <Card Icon={TiTicket} title='Tickets' slug='' link='/tickets' />
+      <Card Icon={FaUsers} title='Users' slug='' link='/users' />
       <Card Icon={MdOutlineCategory} title='Categories' slug='' link='/' />
       <Card Icon={RiHashtag} title='Tags' slug='' link='/' />
       <Card Icon={TiTicket} title='Departments' slug='' link='/' />

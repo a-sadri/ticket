@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Tickets from './pages/tickets/Tickets';
+import Users from './pages/users/Users';
 import AddTicket from './pages/tickets/AddTicket';
 import Messages from './pages/messages/Messages';
 import Message from './pages/messages/Message';
@@ -16,6 +17,7 @@ const App = () => {
           <Route index element={<Dashboard />} />
           <Route path='tickets' element={<Tickets />} />
           <Route path='tickets/add' element={<AddTicket />} />
+          <Route path='users' element={<Users />} />
           <Route path='messages' element={<Messages />} />
           <Route path='messages/:id' element={<Message />} />
         </Route>
