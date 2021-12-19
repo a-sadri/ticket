@@ -7,7 +7,9 @@
   "scripts": {
     "server": "nodemon server",
     "client": "npm start --prefix ../frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node data/seeder",
+    "data:destroy": "node data/seeder -d"
   },
   "author": "Ali sadri",
   "license": "ISC",

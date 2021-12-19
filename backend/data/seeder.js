@@ -2,7 +2,9 @@ import dotenv from 'dotenv';
 import chalk from 'chalk';
 import connectDB from '../config/db.js';
 
+import User from '../models/userModel.js';
 import Ticket from '../models/ticketModel.js';
+import users from './users.js';
 import tickets from './tickets.js';
 
 dotenv.config();
@@ -21,10 +23,10 @@ const importData = async () => {
 
     await Ticket.insertMany(ticketsAssign);
 
-    chalk.green(console.log('Data Imported'));
+    console.log(chalk.green('Data Imported'));
     process.exit();
   } catch (error) {
-    chalk.red(console.log(`${error}`));
+    console.log(chalk.red(`${error}`));
     process.exit(1);
   }
 };
@@ -33,10 +35,10 @@ const destroyData = async () => {
   try {
     await Ticket.deleteMany();
 
-    chalk.red(console.log('Data Destroyed'));
+    console.log(chalk.red('Data Destroyed'));
     process.exit();
   } catch (error) {
-    chalk.red(console.log(`${error}`));
+    console.log(chalk.red(`${error}`));
     process.exit(1);
   }
 };
