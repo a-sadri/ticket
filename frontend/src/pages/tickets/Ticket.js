@@ -10,8 +10,9 @@ const Ticket = () => {
   let { title, description, user, status, createdAt, updatedAt } =
     !isLoading && data;
 
+  let user_name;
   if (user) {
-    var user_name = user.name;
+    user_name = user.name;
   }
 
   return (
