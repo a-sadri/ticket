@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Tickets from './pages/tickets/Tickets';
+import Ticket from './pages/tickets/Ticket';
 import Users from './pages/users/Users';
 import User from './pages/users/User';
 import AddTicket from './pages/tickets/AddTicket';
@@ -17,6 +18,7 @@ const App = () => {
         <Route path='/' element={<Layout />}>
           <Route index element={<Dashboard />} />
           <Route path='tickets' element={<Tickets />} />
+          <Route path='tickets/:id' element={<Ticket />} />
           <Route path='tickets/add' element={<AddTicket />} />
           <Route path='users' element={<Users />} />
           <Route path='users/:id' element={<User />} />

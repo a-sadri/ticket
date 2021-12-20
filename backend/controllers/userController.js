@@ -5,7 +5,7 @@ import User from '../models/userModel.js';
 // @route  GET /users
 // @access Public
 const getUsers = asyncHandler(async (req, res) => {
-  const users = await User.find({});
+  const users = await User.find();
   res.json(users);
 });
 

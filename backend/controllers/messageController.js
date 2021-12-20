@@ -5,7 +5,7 @@ import Message from '../models/messageModel.js';
 // @route  GET /messages
 // @access Public
 const getMessages = asyncHandler(async (req, res) => {
-  const messages = await Message.find({});
+  const messages = await Message.find();
   res.json(messages);
 });
 
