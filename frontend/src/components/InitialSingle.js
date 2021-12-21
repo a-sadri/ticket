@@ -2,7 +2,7 @@ import ContainerLayout from './ContainerLayout';
 import Alerts from './shared/Alerts';
 import Spinner from './shared/Spinner';
 
-const initial = ({ data, error, isLoading, isError, isSuccess, children }) => {
+const Initial = ({ data, error, isLoading, isError, isSuccess, children }) => {
   return (
     <ContainerLayout>
       {isLoading && (
@@ -26,4 +26,4 @@ const initial = ({ data, error, isLoading, isError, isSuccess, children }) => {
   );
 };
 
-export default initial;
+export default Initial;

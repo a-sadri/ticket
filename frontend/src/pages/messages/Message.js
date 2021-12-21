@@ -1,11 +1,7 @@
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import { useGetMessageQuery } from '../../redux/apiServices';
-import ContainerLayout from '../../components/ContainerLayout';
-
-import Alerts from '../../components/shared/Alerts';
-import Spinner from '../../components/shared/Spinner';
-import Initial from '../../components/Initial';
+import InitialSingle from '../../components/InitialSingle';
 
 const Message = () => {
   const { id } = useParams();
@@ -15,7 +11,7 @@ const Message = () => {
   let { title, description, status, createdAt, updatedAt } = !isLoading && data;
 
   return (
-    <Initial
+    <InitialSingle
       data={data}
       error={error}
       isLoading={isLoading}
@@ -33,7 +29,7 @@ const Message = () => {
           <p>{moment(createdAt).format('YYYY-MM-DD hh:mm')}</p>
         </div>
       </div>
-    </Initial>
+    </InitialSingle>
   );
 };
 
