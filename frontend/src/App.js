@@ -5,11 +5,13 @@ import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Tickets from './pages/tickets/Tickets';
 import Ticket from './pages/tickets/Ticket';
+import AddTicket from './pages/tickets/AddTicket';
 import Users from './pages/users/Users';
 import User from './pages/users/User';
-import AddTicket from './pages/tickets/AddTicket';
+import AddUser from './pages/users/AddUser';
 import Messages from './pages/messages/Messages';
 import Message from './pages/messages/Message';
+import AddMessage from './pages/messages/AddMessage';
 
 const App = () => {
   return (
@@ -22,8 +24,10 @@ const App = () => {
           <Route path='tickets/add' element={<AddTicket />} />
           <Route path='users' element={<Users />} />
           <Route path='users/:id' element={<User />} />
+          <Route path='users/add' element={<AddUser />} />
           <Route path='messages' element={<Messages />} />
           <Route path='messages/:id' element={<Message />} />
+          <Route path='messages/add' element={<AddMessage />} />
         </Route>
       </Routes>
     </BrowserRouter>

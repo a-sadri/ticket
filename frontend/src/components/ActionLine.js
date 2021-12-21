@@ -1,6 +1,8 @@
-const ActionLine = ({ title, buttonText }) => {
+import { NavLink as Link } from 'react-router-dom';
+
+const ActionLine = ({ title, buttonText, url }) => {
   return (
-    <div className='flex justify-between mt-1 mb-6'>
+    <Link to={url} className='flex justify-between mt-1 mb-6'>
       <div className=''>
         <h1 className='text-2xl font-bold'>{title}</h1>
       </div>
@@ -9,7 +11,7 @@ const ActionLine = ({ title, buttonText }) => {
           {buttonText}
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 

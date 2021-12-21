@@ -14,7 +14,11 @@ const Messages = () => {
 
   return (
     <>
-      <ActionLine title='All Messages' buttonText='Add New Message' />
+      <ActionLine
+        title='All Messages'
+        buttonText='Add New Message'
+        url='/messages/add'
+      />
       <div>
         <div className='flex flex-col'>
           <div className='-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>

@@ -45,7 +45,6 @@ const getTicket = asyncHandler(async (req, res) => {
     'user',
     'name -_id'
   );
-  console.log(ticket);
   if (ticket) {
     res.json(ticket);
   } else {

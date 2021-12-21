@@ -1,11 +1,11 @@
 import ContainerLayout from '../../components/ContainerLayout';
 
-const AddTicket = () => {
+const AddUser = () => {
   return (
     <div>
-      <ContainerLayout>test</ContainerLayout>
+      <ContainerLayout>user</ContainerLayout>
     </div>
   );
 };
 
-export default AddTicket;
+export default AddUser;

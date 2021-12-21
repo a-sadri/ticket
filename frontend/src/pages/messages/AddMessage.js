@@ -1,11 +1,11 @@
 import ContainerLayout from '../../components/ContainerLayout';
 
-const AddTicket = () => {
+const AddMessage = () => {
   return (
     <div>
-      <ContainerLayout>test</ContainerLayout>
+      <ContainerLayout>Message</ContainerLayout>
     </div>
   );
 };
 
-export default AddTicket;
+export default AddMessage;
