@@ -1,4 +1,3 @@
-import { NavLink as Link } from 'react-router-dom';
 import moment from 'moment';
 import { useGetMessagesQuery } from '../../redux/apiServices';
 
@@ -10,13 +9,15 @@ const Messages = () => {
   return (
     <>
       <InitialAll
+        actionline={['All Messages', 'Add New Message', '/messages/add']}
         rowHeadungs={['Title', 'Author', 'Date', 'Status']}
         data={data}
         error={error}
         isLoading={isLoading}
         isError={isError}
         isSuccess={isSuccess}
-        rowData={['title', 'status']}
+        rowData={['_id', 'title', 'status']}
+        showURL='messages'
       ></InitialAll>
     </>
   );

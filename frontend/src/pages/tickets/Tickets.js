@@ -74,6 +74,7 @@ const Tickets = () => {
                     ) : (
                       <span className='badge-info'>Completed</span>
                     )}
+                    {/* Check if its array */}
                   </div>
                 </div>
                 <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3 transition ease-in-out duration-500'>

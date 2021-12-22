@@ -8,6 +8,7 @@ import Alerts from './shared/Alerts';
 import ActionButtons from './shared/ActionButtons';
 
 const InitialAll = ({
+  actionline,
   rowHeadungs,
   data,
   error,
@@ -16,6 +17,7 @@ const InitialAll = ({
   isError,
   children,
   rowData,
+  showURL,
 }) => {
   const dataCreator = () => {
     const filtered = data.map((item) =>
@@ -42,9 +44,9 @@ const InitialAll = ({
   return (
     <>
       <ActionLine
-        title='All Messages'
-        buttonText='Add New Message'
-        url='/messages/add'
+        title={actionline[0]}
+        buttonText={actionline[1]}
+        url={actionline[2]}
       />
 
       <ContainerLayout>
@@ -80,12 +82,20 @@ const InitialAll = ({
               className='relative group border p-3 m-2 rounded-lg col-start-1 col-end-5'
             >
               <div className='grid grid-cols-4 group-hover:blur-sm transition ease-in-out delay-75'>
-                {row.map((item) => (
-                  <div key={item}>{item}</div>
+                {row.slice(1).map((item, index) => (
+                  <div key={index}>
+                    {typeof item !== 'boolean' ? (
+                      item
+                    ) : item == true ? (
+                      <span className='badge-success'>Published</span>
+                    ) : (
+                      <span className='badge-error'>Draft</span>
+                    )}
+                  </div>
                 ))}
               </div>
 
-              <ActionButtons />
+              <ActionButtons showURL={`${row[0]}`} />
             </div>
           ))}
       </ContainerLayout>

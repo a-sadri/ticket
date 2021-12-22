@@ -4,10 +4,10 @@ import { FaEye } from 'react-icons/fa';
 import { FaEdit } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 
-const ActionButtons = () => {
+const ActionButtons = ({ showURL }) => {
   return (
     <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3 transition ease-in-out duration-500'>
-      <Link to={'row._id'} className='badge-info group-hover:animate-left'>
+      <Link to={showURL} className='badge-info group-hover:animate-left'>
         <FaEye className='text-sm mr-2' />
         Show result
       </Link>
