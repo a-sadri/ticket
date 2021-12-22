@@ -10,11 +10,13 @@ const Messages = () => {
   return (
     <>
       <InitialAll
+        rowHeadungs={['Title', 'Author', 'Date', 'Status']}
         data={data}
         error={error}
         isLoading={isLoading}
         isError={isError}
         isSuccess={isSuccess}
+        rowData={['title', 'status']}
       ></InitialAll>
     </>
   );

@@ -11,13 +11,37 @@ import { FaEdit } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 
 const InitialAll = ({
+  rowHeadungs,
   data,
   error,
   isLoading,
   isSuccess,
   isError,
   children,
+  rowData,
 }) => {
+  const dataCreator = () => {
+    const filtered = data.map((item) =>
+      Object.keys(item)
+        .filter((key) => rowData.includes(key))
+        .reduce((obj, key) => {
+          obj[key] = item[key];
+          return obj;
+        }, {})
+    );
+    return filtered;
+  };
+
+  const dataRowCreator = () => {
+    const data = dataCreator();
+
+    const result = data.map((item) => {
+      return Object.values(item);
+    });
+
+    return result;
+  };
+
   return (
     <>
       <ActionLine
@@ -28,18 +52,11 @@ const InitialAll = ({
 
       <ContainerLayout>
         <div className='grid grid-cols-4 text-center font-bold border divide-x p-3 m-2 rounded-lg col-start-1 col-end-5'>
-          <div>
-            <h2>Title</h2>
-          </div>
-          <div>
-            <h2>Author</h2>
-          </div>
-          <div>
-            <h2>Date</h2>
-          </div>
-          <div>
-            <h2>Status</h2>
-          </div>
+          {rowHeadungs.map((heading) => (
+            <div key={heading}>
+              <h2>{heading}</h2>
+            </div>
+          ))}
         </div>
 
         {isLoading && (
@@ -60,32 +77,24 @@ const InitialAll = ({
 
         {isSuccess &&
           data &&
-          data.map((message) => (
+          dataRowCreator().map((row, index) => (
             <div
-              key={message._id}
+              key={index}
               className='relative group border p-3 m-2 rounded-lg col-start-1 col-end-5'
             >
               <div className='grid grid-cols-4 group-hover:blur-sm transition ease-in-out delay-75'>
-                <div>{message.title}</div>
-                <div className='text-center'>john doe</div>
-                <div className='text-center'>
-                  {moment(message.createdAt).format('YYYY-MM-DD hh:mm')}
-                </div>
-                <div className='text-center'>
-                  {message.status ? (
-                    <span className='badge-success'>Published</span>
-                  ) : (
-                    <span className='badge-error'>Draft</span>
-                  )}
-                </div>
+                {row.map((item) => (
+                  <div key={item}>{item}</div>
+                ))}
               </div>
+
               <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3 transition ease-in-out duration-500'>
                 <Link
-                  to={message._id}
+                  to={'row._id'}
                   className='badge-info group-hover:animate-left'
                 >
                   <FaEye className='text-sm mr-2' />
-                  Show Message
+                  Show result
                 </Link>
 
                 <div className='badge-warning '>
