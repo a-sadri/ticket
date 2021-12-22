@@ -1,14 +1,11 @@
-import { NavLink as Link } from 'react-router-dom';
 import moment from 'moment';
 // custom component
 import ActionLine from './ActionLine';
 import ContainerLayout from './ContainerLayout';
 import Spinner from './shared/Spinner';
 import Alerts from './shared/Alerts';
-// Icons
-import { FaEye } from 'react-icons/fa';
-import { FaEdit } from 'react-icons/fa';
-import { FaTrash } from 'react-icons/fa';
+
+import ActionButtons from './shared/ActionButtons';
 
 const InitialAll = ({
   rowHeadungs,
@@ -88,25 +85,7 @@ const InitialAll = ({
                 ))}
               </div>
 
-              <div className='absolute flex gap-8 text-base justify-center group-hover:opacity-100 opacity-0 top-[20%] left-1/3 transition ease-in-out duration-500'>
-                <Link
-                  to={'row._id'}
-                  className='badge-info group-hover:animate-left'
-                >
-                  <FaEye className='text-sm mr-2' />
-                  Show result
-                </Link>
-
-                <div className='badge-warning '>
-                  <FaEdit className='text-sm mr-2' />
-                  Edit
-                </div>
-
-                <div className='badge-error group-hover:animate-right'>
-                  <FaTrash className='text-sm mr-2' />
-                  Delete
-                </div>
-              </div>
+              <ActionButtons />
             </div>
           ))}
       </ContainerLayout>
