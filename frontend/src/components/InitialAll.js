@@ -16,29 +16,46 @@ const InitialAll = ({
   isSuccess,
   isError,
   children,
-  rowData,
+  setData,
   showURL,
 }) => {
-  const dataCreator = () => {
-    const filtered = data.map((item) =>
-      Object.keys(item)
-        .filter((key) => rowData.includes(key))
-        .reduce((obj, key) => {
-          obj[key] = item[key];
-          return obj;
-        }, {})
-    );
-    return filtered;
-  };
+  // const dataCreator = () => {
+  //   const filtered = data.map((item) =>
+  //     Object.keys(item)
+  //       .filter((key) => setData().includes(key))
+  //       .reduce((obj, key) => {
+  //         obj[key] = item[key];
+  //         return obj;
+  //       }, {})
+  //   );
+  //   return filtered;
+  // };
 
   const dataRowCreator = () => {
-    const data = dataCreator();
+    const data = setData();
 
     const result = data.map((item) => {
       return Object.values(item);
     });
 
     return result;
+  };
+
+  const renderSwitch = (item) => {
+    switch (item) {
+      case true:
+        return <span className='badge-success'>Published</span>;
+      case false:
+        return <span className='badge-error'>Draft</span>;
+      case 'answered':
+        return <span className='badge-success'>Answered</span>;
+      case 'pending':
+        return <span className='badge-warning'>Pending</span>;
+      case 'completed':
+        return <span className='badge-info'>Completed</span>;
+      default:
+        return <span>{item}</span>;
+    }
   };
 
   return (
@@ -76,26 +93,18 @@ const InitialAll = ({
 
         {isSuccess &&
           data &&
-          dataRowCreator().map((row, index) => (
+          dataRowCreator().map((item, index) => (
             <div
               key={index}
               className='relative group border p-3 m-2 rounded-lg col-start-1 col-end-5'
             >
               <div className='grid grid-cols-4 group-hover:blur-sm transition ease-in-out delay-75'>
-                {row.slice(1).map((item, index) => (
-                  <div key={index}>
-                    {typeof item !== 'boolean' ? (
-                      item
-                    ) : item == true ? (
-                      <span className='badge-success'>Published</span>
-                    ) : (
-                      <span className='badge-error'>Draft</span>
-                    )}
-                  </div>
+                {item.slice(1).map((row, index) => (
+                  <div key={index}>{renderSwitch(row)}</div>
                 ))}
               </div>
 
-              <ActionButtons showURL={`${row[0]}`} />
+              <ActionButtons showURL={item[0]} />
             </div>
           ))}
       </ContainerLayout>
