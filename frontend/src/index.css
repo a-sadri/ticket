@@ -15,6 +15,12 @@
   .badge-error {
     @apply inline-flex items-center justify-center px-4 py-[.35rem] font-bold leading-none text-red-100 bg-red-500 rounded-lg;
   }
+  .input-normal {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+  }
+  .input-error {
+    @apply bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:bg-red-100 dark:border-red-400;
+  }
 }
 
 .active {

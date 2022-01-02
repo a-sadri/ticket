@@ -24,6 +24,13 @@ export const apiServices = createApi({
     getMessage: builder.query({
       query: (id) => `messages/${id}`,
     }),
+    addNewTicket: builder.mutation({
+      query: (ticket) => ({
+        url: '/tickets',
+        method: 'POST',
+        body: ticket,
+      }),
+    }),
   }),
 });
 
@@ -34,4 +41,5 @@ export const {
   useGetUserQuery,
   useGetMessagesQuery,
   useGetMessageQuery,
+  useAddNewTicketMutation,
 } = apiServices;
