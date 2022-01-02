@@ -1,4 +1,3 @@
-import moment from 'moment';
 // custom component
 import ActionLine from './ActionLine';
 import ContainerLayout from './ContainerLayout';
@@ -19,18 +18,6 @@ const InitialAll = ({
   setData,
   showURL,
 }) => {
-  // const dataCreator = () => {
-  //   const filtered = data.map((item) =>
-  //     Object.keys(item)
-  //       .filter((key) => setData().includes(key))
-  //       .reduce((obj, key) => {
-  //         obj[key] = item[key];
-  //         return obj;
-  //       }, {})
-  //   );
-  //   return filtered;
-  // };
-
   const dataRowCreator = () => {
     const data = setData();
 
@@ -98,9 +85,11 @@ const InitialAll = ({
               key={index}
               className='relative group border p-3 m-2 rounded-lg col-start-1 col-end-5'
             >
-              <div className='grid grid-cols-4 group-hover:blur-sm transition ease-in-out delay-75'>
+              <div className='grid grid-cols-4 text-center group-hover:blur-sm transition ease-in-out delay-75'>
                 {item.slice(1).map((row, index) => (
-                  <div key={index}>{renderSwitch(row)}</div>
+                  <div className='first:text-left' key={index}>
+                    {renderSwitch(row)}
+                  </div>
                 ))}
               </div>
 
