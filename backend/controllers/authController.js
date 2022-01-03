@@ -25,6 +25,7 @@ const register = asyncHandler(async (req, res) => {
       _id: user._id,
       name: user.name,
       email: user.email,
+      token: generateToken(user._d),
     });
   } else {
     res.status(400);
