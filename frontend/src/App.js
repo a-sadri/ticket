@@ -12,6 +12,8 @@ import AddUser from './pages/users/AddUser';
 import Messages from './pages/messages/Messages';
 import Message from './pages/messages/Message';
 import AddMessage from './pages/messages/AddMessage';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
           <Route path='messages/:id' element={<Message />} />
           <Route path='messages/add' element={<AddMessage />} />
         </Route>
+        <Route path='login' element={<Login />} />
+        <Route path='register' element={<Register />} />
       </Routes>
     </BrowserRouter>
   );
