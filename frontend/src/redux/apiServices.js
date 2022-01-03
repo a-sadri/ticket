@@ -31,6 +31,13 @@ export const apiServices = createApi({
         body: ticket,
       }),
     }),
+    login: builder.mutation({
+      query: (credentioals) => ({
+        url: '/users/login',
+        method: 'POST',
+        body: credentioals,
+      }),
+    }),
   }),
 });
 
@@ -42,4 +49,5 @@ export const {
   useGetMessagesQuery,
   useGetMessageQuery,
   useAddNewTicketMutation,
+  useLoginMutation,
 } = apiServices;

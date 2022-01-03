@@ -1,6 +1,44 @@
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
+import { setCredentials } from '../../redux/authSlice';
+import { useLoginMutation } from '../../redux/apiServices';
+
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const [login, { isLoading }] = useLoginMutation();
+
+  const onSubmitClicked = async (data) => {
+    try {
+      const result = await login(data);
+      if (result.data) {
+        console.log(result.data);
+        dispatch(setCredentials(result.data));
+        navigate(`/`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+
+    // const newTicket = await login({
+    //   title: data.title,
+    //   description: data.description,
+    // });
+    // if (newTicket) {
+    //   navigate(`/tickets/`);
+    // }
+  };
+
   return (
     <div class='flex items-center justify-center min-h-screen bg-gray-100'>
       <div class='px-8 py-6 mt-4 text-left bg-white shadow-lg'>
@@ -23,7 +61,7 @@ const Login = () => {
           </svg>
         </div>
         <h3 class='text-2xl font-bold text-center'>Login to your account</h3>
-        <form action=''>
+        <form onSubmit={handleSubmit(onSubmitClicked)}>
           <div class='mt-4'>
             <div>
               <label class='block' for='email'>
@@ -33,6 +71,7 @@ const Login = () => {
                 type='text'
                 placeholder='Email'
                 class='w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600'
+                {...register('email', { required: true })}
               />
               <span class='text-xs tracking-wide text-red-600'>
                 Email field is required{' '}
@@ -44,6 +83,7 @@ const Login = () => {
                 type='password'
                 placeholder='Password'
                 class='w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600'
+                {...register('password', { required: true })}
               />
             </div>
             <div class='flex items-baseline justify-between'>
