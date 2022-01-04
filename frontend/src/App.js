@@ -15,6 +15,9 @@ import AddMessage from './pages/messages/AddMessage';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -34,6 +37,7 @@ const App = () => {
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 };
